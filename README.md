@@ -1,2 +1,1 @@
-# Mitie
-Mitie Ticket Submission
+Mitie ticket system, reluctantly done in Cake for deadline. Ideally to be moved to Symfony or own framework.
