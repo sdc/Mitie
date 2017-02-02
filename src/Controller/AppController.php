@@ -20,7 +20,7 @@ use Cake\Event\Event;
 
 class AppController extends Controller
 {
-    const AUTHORISED_GROUPS = ['SDC STAFF'];
+    const AUTHORISED_GROUPS = ['SDC Non-Teaching Staff', 'SDC Teaching Staff'];
 
     protected $user;
 
