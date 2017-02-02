@@ -36,10 +36,6 @@ class TicketsTable extends Table
             ->allowEmpty('email');
 
         $validator
-            ->date('date')
-            ->allowEmpty('date');
-
-        $validator
             ->allowEmpty('department');
 
         $validator
@@ -62,10 +58,6 @@ class TicketsTable extends Table
 
         $validator
             ->allowEmpty('additional');
-
-        $validator
-            ->boolean('sent')
-            ->allowEmpty('sent');
 
         return $validator;
     }
