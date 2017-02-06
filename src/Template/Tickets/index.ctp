@@ -4,11 +4,12 @@
         'value' => 0
     ]) ?>
     <div class="form-group">
+        <label for="description">Description (required)</label>
         <?= $this->Form->textarea('description', [
             'class' => 'form-control input-lg ticket-description',
             'placeholder' => 'Description (required) - For emergencies i.e. leaks/floods, power loss, safety or security issues - call x877',
             'required' => true,
-            'maxLength' => 500
+            'maxLength' => 500,
         ]) ?>
     </div>
     <div class="form-group row">
@@ -17,14 +18,14 @@
                 'class' => 'form-control input-lg', 
                 'options' => $buildings,
                 'empty' => 'Select a building (required)',
-                'label' => false,
+                'label' => 'Building (required)',
                 'required' => true
             ]) ?>
         </div>
         <div class="col-md-6 col-sm-12">
             <?= $this->Form->input('room', [
                 'class' => 'form-control input-lg',
-                'label' => false,
+                'label' => 'Room (required)',
                 'placeholder' => 'Room number / location (required)',
                 'required' => true,
                 'maxLength' => 150
@@ -46,7 +47,7 @@
             <div class="col-md-4">
                 <?= $this->Form->input('department', [
                     'class' => 'form-control',
-                    'label' => false, 
+                    'label' => 'Department', 
                     'placeholder' => 'Department (required)',
                     'required' => false,
                     'disabled' => true,
@@ -56,7 +57,7 @@
             <div class="col-md-4">
                 <?= $this->Form->input('phone', [
                     'class' => 'form-control',
-                    'label' => false, 
+                    'label' => 'Phone', 
                     'placeholder' => 'Contact phone number (required)',
                     'required' => false,
                     'disabled' => true,
@@ -70,13 +71,14 @@
                     'options' => $priorities,
                     'empty' => 'Select a priority (required)',
                     'required' => false,
-                    'label' => false,
+                    'label' => 'Priority',
                     'disabled' => true
                 ]) ?>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-12">
+                <label for="additional">Additional Information</label>
                 <?= $this->Form->textarea('additional', [
                     'class' => 'form-control pull-right ',
                     'placeholder' => 'Additional Information',

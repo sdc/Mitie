@@ -14,6 +14,10 @@ body {
     background-size: cover;
 }
 
+label {
+    display: none;
+}
+
 #ticket-submission {
     background-color: #fff;
     margin-top: 3%;

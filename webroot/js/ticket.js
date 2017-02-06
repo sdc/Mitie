@@ -1,6 +1,16 @@
 activeClass = 'fa fa-check-circle-o';
 inactiveClass = 'fa fa-circle-o';
 
+$(document).ready(function() {
+    if (!Modernizr.placeholder) {
+        $("label").show();
+        return notify(
+            'For emergencies i.e. leaks/floods, power loss, safety or security issues - call x877',
+            'info'
+        );
+    }
+})
+
 $('#progress-tick').click(function() {
     if ($('#full-service').val() == 1) {
         $('#full-service').val(0);
@@ -16,23 +26,25 @@ $('#progress-tick').click(function() {
 
 $('#ticket-form').submit(function(e) {
     if (!Modernizr.formvalidation) {
-        if (!$(this)[0].checkValidity()) {
-            e.preventDefault();
-            alert('Please fill out all of the required fields');
-            return false;
-        }
+        $(this).find('select, input, textarea').each(function() {
+            if ($(this).attr('required') != null && !$(this).val()) {
+                e.preventDefault();
+                notify('Please fill out all of the required fields', 'error');
+                return false;   
+            }
+        })
     }
-
+    
     if (!Modernizr.textareamaxlength) {
         if ($("input[name=description]").val().trim().length > 500) {
             e.preventDefault();
-            alert('Description must be less than 500 characters');
+            notify('Description must be less than 500 characters', 'error');
             return false;
         }
 
         if ($('#full-service').val() == 1 && $("input[name=additional]").val().trim().length > 500) {
             e.preventDefault();
-            alert('Additional information must be less than 500 characters');
+            notify('Additional information must be less than 500 characters', 'error');
             return false;
         }
     }
@@ -44,7 +56,7 @@ function enableFullServiceForm() {
     enableAndRequire($("input[name=department]"));
     enableAndRequire($("input[name=phone]"));
     enableAndRequire($("select[name=priority]"));
-    enableAndRequire($("textarea[name=additional]"));
+    $("textarea[name=additional]").prop("disabled", false);
     $('#full-service-form').slideDown();
 }
 
@@ -65,3 +77,4 @@ function disableInput(input) {
     $(input).prop("disabled", true);
     $(input).prop("required", false);
 }
+ 

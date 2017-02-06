@@ -39,11 +39,11 @@
             </div>
         </div>
     </div>
-    <footer>
-    </footer>
+    <footer></footer>
     <?= $this->Html->script('Packages/jquery.min') ?>
     <?= $this->Html->script('Packages/bootstrap.min') ?>
     <?= $this->Html->script('Packages/modernizr-custom.min') ?>
+    <?= $this->Html->script('notify') ?>
 <?php 
     if (isset($js) && is_array($js)) { 
         foreach($js as $jsFile) {
