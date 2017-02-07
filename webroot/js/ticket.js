@@ -77,4 +77,3 @@ function disableInput(input) {
     $(input).prop("disabled", true);
     $(input).prop("required", false);
 }
- 

@@ -43,4 +43,5 @@ function notify(text, type)
     
     notification.innerHTML += text;
     document.body.insertBefore(notification, document.body.firstChild);
+    window.scrollTo(0, 0);
 }
