@@ -13,9 +13,9 @@ class TicketSaveFailureException extends HttpException {}
 class TicketsController extends AppController
 {
     const PRIORITIES = [
-        'Priority 2: Urgent - This impacts teaching (within one working day response time)',
-        'Priority 3: Standard - Non critical (within one working week response time)',
-        'Priority 4: Projects - agreed response time'
+        2 => 'Priority 2: Urgent - This impacts teaching (within one working day response time)',
+        3 => 'Priority 3: Standard - Non critical (within one working week response time)',
+        4 => 'Priority 4: Projects - agreed response time'
     ];
 
     public function initialize()
@@ -32,7 +32,7 @@ class TicketsController extends AppController
             $this->Tickets->Buildings->find('list', ['limit' => 500])
         );
 
-        $this->set('priorities', array_combine(self::PRIORITIES, self::PRIORITIES)); 
+        $this->set('priorities', self::PRIORITIES); 
         $this->set('ticket', $this->Tickets->newEntity());
     }
 
@@ -58,7 +58,7 @@ class TicketsController extends AppController
             $this->Tickets->Buildings->find('list', ['limit' => 500])
         );
         $this->set('ticket', $ticket);
-        $this->set('priorities', array_combine(self::PRIORITIES, self::PRIORITIES)); 
+        $this->set('priorities', self::PRIORITIES); 
         $this->set('fullService', $this->request->data('full-service'));
 
         return $this->render('complete');
@@ -68,7 +68,9 @@ class TicketsController extends AppController
     {
         $ticket = $this->Tickets->newEntity();
         $ticket->name = $this->user->getName();
-        $ticket->description = $this->getRequestOrThrow('description');
+        $ticket->description = str_replace(
+            ["\n", "\r", "\t"], ' ', trim($this->getRequestOrThrow('description'))
+        );
         $ticket->room = $this->getRequestOrThrow('room');
         $ticket->building_id = $this->getRequestOrThrow('building_id');
 
@@ -97,7 +99,7 @@ class TicketsController extends AppController
         $email = new Email();
         $email
             ->from(Configure::read('Email.from'))
-            ->to(['jamesbyrne@southdevon.ac.uk' => 'James Byrne'])
+            ->to(['MTFM.MiamiSR@mitie.com' => 'Mitie'])
             ->subject('Mitie')
             ->emailFormat('text')
             ->template('maximo', 'default')
@@ -112,15 +114,18 @@ class TicketsController extends AppController
 
     private function buildLongDescription($ticket)
     {
-        $description = $ticket->additional;
+        $description = str_replace(
+            ["\n", "\r", "\t"], ' ', trim($ticket->additional)
+        );
+
         if (is_null($description)) {
             $description = '';
         }
 
-        $description .= "\nRoom: $ticket->room";
+        $description .= " - Room: $ticket->room";
 
         if (!is_null($ticket->department)) {
-            $description .= "\nDepartment: $ticket->department";
+            $description .= " - Department: $ticket->department";
         }
 
         return $description;

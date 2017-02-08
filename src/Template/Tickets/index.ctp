@@ -9,7 +9,7 @@
             'class' => 'form-control input-lg ticket-description',
             'placeholder' => 'Description (required) - For emergencies i.e. leaks/floods, power loss, safety or security issues - call x877',
             'required' => true,
-            'maxLength' => 500
+            'maxLength' => 100
         ]) ?>
     </div>
     <div class="form-group row">
@@ -84,7 +84,7 @@
                     'placeholder' => 'Additional Information',
                     'required' => false,
                     'disabled' => true,
-                    'maxLength' => 500
+                    'maxLength' => 100
                 ]) ?>
             </div>
         </div>              
