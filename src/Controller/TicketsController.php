@@ -52,7 +52,7 @@ class TicketsController extends AppController
         $ticket = $this->Tickets->get($ticket->id, ['contain' => 'Buildings']);
         $ticket->additional = $this->buildLongDescription($ticket);
         $this->sendMitieEmail($ticket);
-        $this->Flash->success('Ticket sent to Mitie');
+        $this->Flash->success('Ticket received by Property Services Support Desk');
 
         $this->set('buildings', 
             $this->Tickets->Buildings->find('list', ['limit' => 500])

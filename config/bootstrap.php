@@ -118,5 +118,5 @@ if (Configure::read('debug')) {
 
 Configure::write('Email', [
     'enabled' => true,
-    'from' => ['propertyservices@southdevon.ac.uk' => 'South Devon College']
+    'from' => ['mitie@southdevon.ac.uk' => 'South Devon College']
 ]);
