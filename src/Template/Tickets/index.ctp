@@ -7,7 +7,7 @@
         <label for="description">Description (required)</label>
         <?= $this->Form->textarea('description', [
             'class' => 'form-control input-lg ticket-description',
-            'placeholder' => 'Description (required) - For emergencies i.e. leaks/floods, power loss, safety or security issues - call x877',
+            'placeholder' => 'Description (required) - For our \'QUICK\' service, please enter basic information in this box',
             'required' => true,
             'maxLength' => 100
         ]) ?>
@@ -33,12 +33,12 @@
         </div>
     </div>
     <div class="form-group checkbox row">
-        <div class="col-lg-3 col-md-5 col-sm-5 col-xs-12">
+        <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12">
             <div id="progress-tick" class="input-group">
                 <span class="input-group-addon">
                     <i class="fa fa-circle-o"></i>
                 </span>
-                <input type="text" disabled class="display form-control" value="Progress Updates?">
+                <input type="text" disabled class="display form-control" value="Click for 'FULL' service with progress updates">
             </div>
         </div>
     </div>

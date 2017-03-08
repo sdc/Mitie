@@ -2,10 +2,19 @@ textarea, input, select {
     background-color: #f2f2f2 !important;
 }
 
+#title-block {
+    margin-bottom: 25px;
+}
+
 .title {
     font-family: 'Patua One', cursive;
     color: #4F216C;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
+}
+
+.emergency-text {
+    margin-bottom: 0px;
+    color: red;
 }
 
 body {

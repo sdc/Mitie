@@ -23,8 +23,9 @@
             <div class="row">
                 <div id="ticket-submission" class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
                     <div class="row">
-                        <div class="col-md-10">
+                        <div id="title-block" class="col-md-10">
                             <h1 class="title">Property Services Support Desk</h1>
+                            <h6 class="emergency-text">For emergencies i.e. leaks/floods, power loss, safety or security issues - call x877</h6>
                         </div>
                         <div class="col-md-2 hidden-xs hidden-sm">
                             <?= $this->Html->image('property-services-logo.png', [
