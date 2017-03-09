@@ -25,7 +25,7 @@
                     <div class="row">
                         <div id="title-block" class="col-md-10">
                             <h1 class="title">Property Services Support Desk</h1>
-                            <h6 class="emergency-text">For emergencies i.e. leaks/floods, power loss, safety or security issues - call x877</h6>
+                            <h4 class="emergency-text">For emergencies i.e. leaks/floods, power loss, safety or security issues - call x877</h4>
                         </div>
                         <div class="col-md-2 hidden-xs hidden-sm">
                             <?= $this->Html->image('property-services-logo.png', [
