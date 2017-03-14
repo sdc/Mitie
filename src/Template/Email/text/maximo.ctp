@@ -12,6 +12,6 @@ REPORTEDPRIORITY=<?= $this->Email->e($ticket->priority) ?><?= "\r\n" ?>;<?= "\r\
 MTFMSRCLIENTREF=389456<?= "\r\n" ?>;<?= "\r\n" ?>
 DESCRIPTION_LONGDESCRIPTION=<?= $this->Email->e($ticket->additional) ?><?= "\r\n" ?>;<?= "\r\n" ?>
 AFFECTEDPERSONNP=<?= $this->Email->e($ticket->name) ?><?= "\r\n" ?>;<?= "\r\n" ?>
-AFFECTEDPHONENP=<?= $this->Email->e($ticket->phone) ?><?= "\r\n" ?>;<?= "\r\n" ?>
+REPORTEDPHONENP=<?= $this->Email->e($ticket->phone) ?><?= "\r\n" ?>;<?= "\r\n" ?>
 REPORTEDEMAILNP=<?= $this->Email->e($ticket->email) ?><?= "\r\n" ?>;<?= "\r\n" ?>
 #MAXIMO_EMAIL_END
