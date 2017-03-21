@@ -118,7 +118,7 @@ class TicketsController extends AppController
         $email = new Email();
         $email
             ->from(Configure::read('Email.from'))
-            ->to(['sdcsupportdesk@southdevon.ac.uk' => 'Mitie'])
+            ->to(['sdcsupportdesk@mitie.com' => 'Mitie'])
             ->subject('Mitie')
             ->emailFormat('html')
             ->template('maximo', 'default')
