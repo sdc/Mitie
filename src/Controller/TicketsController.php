@@ -51,7 +51,7 @@ class TicketsController extends AppController
 
         $ticket = $this->Tickets->get($ticket->id, ['contain' => 'Buildings']);
         $ticket->additional = $this->buildLongDescription($ticket);
-        //$this->sendMitieEmail($ticket);
+        $this->sendMitieEmail($ticket);
         $this->sendSupportDeskEmail($ticket);
         $this->Flash->success('Ticket received by Property Services Support Desk');
 
