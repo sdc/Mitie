@@ -108,6 +108,10 @@ class TicketsController extends AppController
                 'ticket' => $ticket
             ]);
 
+        if (Configure::check('Email.bcc')) {
+            $email->bcc(Configure::read('Email.bcc'));
+        }
+
         if (Configure::read('Email.enabled')) {
             $email->send();
         }
@@ -125,6 +129,10 @@ class TicketsController extends AppController
             ->viewVars([
                 'ticket' => $ticket
             ]);
+
+        if (Configure::check('Email.bcc')) {
+            $email->bcc(Configure::read('Email.bcc'));
+        }
 
         if (Configure::read('Email.enabled')) {
             $email->send();
