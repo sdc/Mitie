@@ -3,7 +3,7 @@
         <?= $this->Form->textarea('description', [
             'class' => 'form-control input-lg ticket-description',
             'disabled' => true,
-            'value' => h($ticket->description)
+            'value' => /*h*/($ticket->description)
         ]) ?>
     </div>
     <div class="form-group row">
@@ -62,7 +62,7 @@
             <?= $this->Form->textarea('additional', [
                 'class' => 'form-control pull-right ',
                 'disabled' => true,
-                'value' => h($ticket->additional)
+                'value' => /*h*/($ticket->additional)
             ]) ?>
         </div>
     </div>
