@@ -88,7 +88,8 @@ Configure::write('Email', Configure::read('Email'));
 Cache::config(Configure::consume('Cache'));
 ConnectionManager::config(Configure::consume('Datasources'));
 Email::configTransport(Configure::consume('EmailTransport'));
-Email::config(Configure::consume('Email'));
+//Email::config(Configure::consume('Email'));
+Email::config(Configure::read('Email'));
 Log::config(Configure::consume('Log'));
 Security::salt(Configure::consume('Security.salt'));
 
@@ -116,7 +117,9 @@ if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
 
+/*
 Configure::write('Email', [
     'enabled' => true,
     'from' => ['mitie@southdevon.ac.uk' => 'South Devon College']
 ]);
+*/
