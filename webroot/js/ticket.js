@@ -36,9 +36,9 @@ $('#ticket-form').submit(function(e) {
     }
     
     if (!Modernizr.textareamaxlength) {
-        if ($("input[name=description]").val().trim().length > 100) {
+        if ($("input[name=description]").val().trim().length > 200) {
             e.preventDefault();
-            notify('Description must be less than 100 characters', 'error');
+            notify('Description must be less than 200 characters', 'error');
             return false;
         }
 
