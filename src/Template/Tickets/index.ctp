@@ -9,7 +9,7 @@
             'class' => 'form-control input-lg ticket-description',
             'placeholder' => 'Description (required) - For our \'QUICK\' service, please enter basic information in this box',
             'required' => true,
-            'maxLength' => 100
+            'maxLength' => 200
         ]) ?>
     </div>
     <div class="form-group row">
