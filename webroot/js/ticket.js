@@ -36,15 +36,15 @@ $('#ticket-form').submit(function(e) {
     }
     
     if (!Modernizr.textareamaxlength) {
-        if ($("input[name=description]").val().trim().length > 200) {
+        if ($("input[name=description]").val().trim().length > 100) {
             e.preventDefault();
-            notify('Description must be less than 200 characters', 'error');
+            notify('Description must be less than 100 characters', 'error');
             return false;
         }
 
-        if ($('#full-service').val() == 1 && $("input[name=additional]").val().trim().length > 100) {
+        if ($('#full-service').val() == 1 && $("input[name=additional]").val().trim().length > 200) {
             e.preventDefault();
-            notify('Additional information must be less than 100 characters', 'error');
+            notify('Additional information must be less than 200 characters', 'error');
             return false;
         }
     }
